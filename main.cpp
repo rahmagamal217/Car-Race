@@ -55,11 +55,11 @@ int main()
     //Set racer and Obs pos
 	RacerX=SCREEN_WIDTH/2;
 	RacerY=SCREEN_HEIGH-racerHeight;
-	Obs1X=rand()%borderRight+borderLeft;
-	Obs2X=rand()%borderRight+borderLeft;
-	Obs3X=rand()%borderRight+borderLeft;
-	Obs4X=rand()%borderRight+borderLeft;
-	CoinX=rand()%borderRight+borderLeft;
+	Obs1X=borderLeft+rand()%((borderRight+1)-borderLeft);
+	Obs2X=borderLeft+rand()%((borderRight+1)-borderLeft);
+	Obs3X=borderLeft+rand()%((borderRight+1)-borderLeft);
+	Obs4X=borderLeft+rand()%((borderRight+1)-borderLeft);
+	CoinX=borderLeft+rand()%((borderRight+1)-borderLeft);
     Obs1Y=0,Obs2Y=-100,Obs3Y=-200,Obs4Y=-300,CoinY=-400;
     double BackgroundY1=0;
     double BackgroundY2=-600;
@@ -122,17 +122,17 @@ int main()
 
         //Set Obs LOOP
         if (Obs1Y>SCREEN_HEIGH)
-            {Obs1Y=0;Obs1X=rand()%borderRight+borderLeft;} else {Obs1Y=Obs1Y+gameSpeed;}
+            {Obs1Y=0;Obs1X=borderLeft+rand()%((borderRight+1)-borderLeft);} else {Obs1Y=Obs1Y+gameSpeed;}
         if (Obs2Y>SCREEN_HEIGH)
-            {Obs2Y=0;Obs2X=rand()%borderRight+borderLeft;} else {Obs2Y=Obs2Y+gameSpeed;}
+            {Obs2Y=0;Obs2X=borderLeft+rand()%((borderRight+1)-borderLeft);} else {Obs2Y=Obs2Y+gameSpeed;}
         if (Obs3Y>SCREEN_HEIGH)
-            {Obs3Y=0;Obs3X=rand()%borderRight+borderLeft;} else {Obs3Y=Obs3Y+gameSpeed;}
+            {Obs3Y=0;Obs3X=borderLeft+rand()%((borderRight+1)-borderLeft);} else {Obs3Y=Obs3Y+gameSpeed;}
         if (Obs4Y>SCREEN_HEIGH)
-            {Obs4Y=0;Obs4X=rand()%borderRight+borderLeft;} else {Obs4Y=Obs4Y+gameSpeed;}
+            {Obs4Y=0;Obs4X=borderLeft+rand()%((borderRight+1)-borderLeft);} else {Obs4Y=Obs4Y+gameSpeed;}
         if (CoinY>SCREEN_HEIGH)
-            {CoinY=0;CoinX=rand()%borderRight+borderLeft;} else {CoinY=CoinY+gameSpeed;}
+            {CoinY=0;CoinX=borderLeft+rand()%((borderRight+1)-borderLeft);} else {CoinY=CoinY+gameSpeed;}
         if (Coin.getGlobalBounds().intersects(Racer.getGlobalBounds())==true)
-            {CoinY=0;CoinX=rand()%borderRight+borderLeft;score++;}
+            {CoinY=0;CoinX=borderLeft+rand()%((borderRight+1)-borderLeft);score++;}
 
         //Game level
         if(score>10 && score<18) {gameSpeed=0.4;}
